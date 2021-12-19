@@ -13,6 +13,7 @@ repositories {
 kotlin {
     jvm()
     macosX64()
+    macosArm64()
 
     sourceSets {
         val commonTest by getting {
