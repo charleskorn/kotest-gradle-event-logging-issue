@@ -42,7 +42,7 @@ tasks.named<Test>("jvmTest") {
     useJUnitPlatform()
 }
 
-tasks.withType<Test>() {
+tasks.withType<AbstractTestTask>() {
     testLogging {
         events(TestLogEvent.FAILED, TestLogEvent.SKIPPED, TestLogEvent.PASSED, TestLogEvent.STANDARD_OUT, TestLogEvent.STANDARD_ERROR)
         showExceptions = true
