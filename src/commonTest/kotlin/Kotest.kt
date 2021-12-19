@@ -13,5 +13,9 @@ class MyTests : StringSpec({
     "test that fails" {
         false shouldBe true
     }
+
+    "test that is skipped".config(enabled = false) {
+        false shouldBe true
+    }
 })
 

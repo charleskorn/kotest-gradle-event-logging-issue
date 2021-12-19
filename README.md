@@ -22,6 +22,8 @@ MyTests[jvm] > test that fails[jvm] FAILED
         at app//MyTests$1$3.invoke(Kotest.kt)
         at app//MyTests$1$3.invoke(Kotest.kt)
 
+MyTests[jvm] > test that is skipped[jvm] SKIPPED
+
 KotlinTest[jvm] > stdout()[jvm] STANDARD_OUT
     Hello stdout
 
@@ -40,11 +42,13 @@ KotlinTest[jvm] > fails()[jvm] FAILED
         at app//kotlin.test.AssertionsKt.assertTrue(Unknown Source)
         at app//kotlin.test.AssertionsKt__AssertionsKt.assertTrue$default(Assertions.kt:42)
         at app//kotlin.test.AssertionsKt.assertTrue$default(Unknown Source)
-        at app//KotlinTest.fails(KotlinTest.kt:17)
+        at app//KotlinTest.fails(KotlinTest.kt:18)
 
 KotlinTest[jvm] > noOutput()[jvm] PASSED
 
-6 tests completed, 2 failed
+KotlinTest[jvm] > ignored()[jvm] SKIPPED
+
+8 tests completed, 2 failed, 2 skipped
 
 FAILURE: Build failed with an exception.
 
@@ -65,7 +69,7 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 See https://docs.gradle.org/7.3.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 5s
+BUILD FAILED in 2s
 2 actionable tasks: 2 executed
 ```
 
@@ -86,7 +90,7 @@ MyTests.test that fails FAILED
 KotlinTest.fails FAILED
     kotlin.AssertionError at /opt/buildAgent/work/6326934d18cfe24e/kotlin/kotlin-native/runtime/src/main/kotlin/kotlin/Throwable.kt:24
 
-6 tests completed, 2 failed
+8 tests completed, 2 failed, 2 skipped
 
 FAILURE: Build failed with an exception.
 
@@ -107,6 +111,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 See https://docs.gradle.org/7.3.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 9s
+BUILD FAILED in 3s
 3 actionable tasks: 3 executed
 ```
