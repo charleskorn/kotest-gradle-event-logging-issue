@@ -18,11 +18,33 @@ MyTests[jvm] > test with stdout[jvm] PASSED
 
 MyTests[jvm] > test that fails[jvm] FAILED
     io.kotest.assertions.AssertionFailedError: expected:<true> but was:<false>
-        at app//MyTests$1$3.invokeSuspend(Test.kt:14)
-        at app//MyTests$1$3.invoke(Test.kt)
-        at app//MyTests$1$3.invoke(Test.kt)
+        at app//MyTests$1$3.invokeSuspend(Kotest.kt:14)
+        at app//MyTests$1$3.invoke(Kotest.kt)
+        at app//MyTests$1$3.invoke(Kotest.kt)
 
-3 tests completed, 1 failed
+KotlinTest[jvm] > stdout()[jvm] STANDARD_OUT
+    Hello stdout
+
+KotlinTest[jvm] > stdout()[jvm] PASSED
+
+KotlinTest[jvm] > fails()[jvm] FAILED
+    org.opentest4j.AssertionFailedError: Expected value to be true.
+        at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
+        at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:117)
+        at app//kotlin.test.junit5.JUnit5Asserter.fail(JUnitSupport.kt:56)
+        at app//kotlin.test.Asserter$DefaultImpls.assertTrue(Assertions.kt:648)
+        at app//kotlin.test.junit5.JUnit5Asserter.assertTrue(JUnitSupport.kt:30)
+        at app//kotlin.test.Asserter$DefaultImpls.assertTrue(Assertions.kt:658)
+        at app//kotlin.test.junit5.JUnit5Asserter.assertTrue(JUnitSupport.kt:30)
+        at app//kotlin.test.AssertionsKt__AssertionsKt.assertTrue(Assertions.kt:44)
+        at app//kotlin.test.AssertionsKt.assertTrue(Unknown Source)
+        at app//kotlin.test.AssertionsKt__AssertionsKt.assertTrue$default(Assertions.kt:42)
+        at app//kotlin.test.AssertionsKt.assertTrue$default(Unknown Source)
+        at app//KotlinTest.fails(KotlinTest.kt:17)
+
+KotlinTest[jvm] > noOutput()[jvm] PASSED
+
+6 tests completed, 2 failed
 
 FAILURE: Build failed with an exception.
 
@@ -42,6 +64,9 @@ Deprecated Gradle features were used in this build, making it incompatible with 
 You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
 
 See https://docs.gradle.org/7.3.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 5s
+2 actionable tasks: 2 executed
 ```
 
 # `./gradlew macosArm64Test`
@@ -58,7 +83,10 @@ Kotlin Multiplatform Projects are an Alpha feature. See: https://kotlinlang.org/
 MyTests.test that fails FAILED
     io.kotest.assertions.AssertionFailedError at /opt/buildAgent/work/6326934d18cfe24e/kotlin/kotlin-native/runtime/src/main/kotlin/kotlin/Throwable.kt:24
 
-3 tests completed, 1 failed
+KotlinTest.fails FAILED
+    kotlin.AssertionError at /opt/buildAgent/work/6326934d18cfe24e/kotlin/kotlin-native/runtime/src/main/kotlin/kotlin/Throwable.kt:24
+
+6 tests completed, 2 failed
 
 FAILURE: Build failed with an exception.
 
@@ -79,6 +107,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 See https://docs.gradle.org/7.3.2/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD FAILED in 21s
+BUILD FAILED in 9s
 3 actionable tasks: 3 executed
 ```

@@ -11,7 +11,13 @@ repositories {
 }
 
 kotlin {
-    jvm()
+    jvm {
+        testRuns["test"].executionTask.configure {
+            useJUnitPlatform()
+        }
+    }
+
+
     macosX64()
     macosArm64()
 
@@ -20,6 +26,7 @@ kotlin {
             dependencies {
                 implementation("io.kotest:kotest-framework-engine:5.0.3")
                 implementation("io.kotest:kotest-assertions-core:5.0.3")
+                implementation(kotlin("test"))
             }
         }
 
